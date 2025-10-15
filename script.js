@@ -1,11 +1,3 @@
-// alert("Hello, World!")
-
-//   let changeColorButton = document.querySelector("#change-color-btn");
-
-//     changeColorButton.addEventListener("click", function() {
-//         document.body.style.backgroundColor = "lightblue";
-//     });
-
 let toggleColorButton = document.querySelector("#toggle-color");
 toggleColorButton.addEventListener("click", toggleColor);
 
