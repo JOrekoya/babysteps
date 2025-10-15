@@ -1,5 +1,178 @@
-/* header{
-    display:flex;
-    justify-content:space-between;
-} */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+/* Header Styles */
+header {
+    background-color: whitesmoke;
+    border-bottom: 2px solid #e0e0e0;
+    color: black;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+nav p {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+nav p:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#toggle-color {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+    background-color: #E0E0E0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+#toggle-color:hover {
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid #4A90E2;
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #4A90E2;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+form button[type="submit"]:active {
+    background-color: #2868A8;
+}
+
+/* Sleep Form Specific Styling */
+#sleep-form button[type="submit"] {
+    background-color: #6B9BD1;
+}
+
+#sleep-form button[type="submit"]:hover {
+    background-color: #5A8ABC;
+}
+
+/* Feed Form Specific Styling */
+#feed-form button[type="submit"] {
+    background-color: #F4A6B8;
+}
+
+#feed-form button[type="submit"]:hover {
+    background-color: #E88BA0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    main {
+        margin: 1rem auto;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+}
