@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
@@ -9,6 +10,7 @@ body {
 
 /* Header Styles */
 header {
+    position: relative;
     background-color: whitesmoke;
     border-bottom: 2px solid #e0e0e0;
     color: black;
@@ -22,6 +24,19 @@ header h1 {
     text-align: center;
 }
 
+#logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
 nav {
     display: flex;
     gap: 1rem;
@@ -149,39 +164,6 @@ form button[type="submit"]:active {
     background-color: #E88BA0;
 }
 
-/* Footer Styles */
-footer {
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: auto;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav {
-        gap: 1rem;
-    }
-
-    main {
-        margin: 1rem auto;
-    }
-
-    form {
-        padding: 1.5rem;
-    }
-}
-
 /* Records Section Styles */
 #records {
     margin-top: 3rem;
@@ -245,4 +227,37 @@ footer p {
 
 #feed-total {
     background-color: #fef0f3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    main {
+        margin: 1rem auto;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
 }
