@@ -21,10 +21,10 @@ header {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(139, 152, 255, 0.2);
     color: #e8e9f0;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2rem 3rem 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
 }
@@ -38,7 +38,7 @@ body.light-mode header {
 
 header h1 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.75rem;
+    font-size: 2rem;
     margin: 0;
     text-align: center;
     background: linear-gradient(135deg, #a8b5ff 0%, #e8b4f5 100%);
@@ -47,6 +47,7 @@ header h1 {
     background-clip: text;
     font-weight: 400;
     flex: 1;
+    padding-top: 0.5rem;
 }
 
 #logo {
@@ -75,12 +76,13 @@ nav {
     gap: 1rem;
     justify-content: center;
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0.75rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
 nav a {
+    font-family: 'Nunito', sans-serif;
     color: #e8e9f0;
     text-decoration: none;
     padding: 0.4rem 1.2rem;
@@ -88,9 +90,10 @@ nav a {
     border: 1px solid rgba(168, 181, 255, 0.3);
     border-radius: 20px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 700;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 body.light-mode nav a {
@@ -113,10 +116,12 @@ nav a:hover {
     border: 1px solid rgba(232, 180, 245, 0.3);
     border-radius: 20px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     white-space: nowrap;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 body.light-mode #toggle-color {
@@ -142,12 +147,14 @@ main {
 }
 
 main h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.75rem;
     color: #a8b5ff;
     margin-bottom: 1rem;
-    padding-left: 0.5rem;
-    border-left: 4px solid #a8b5ff;
+    padding-left: 0.75rem;
+    border-left: 5px solid #a8b5ff;
+    font-weight: 700;
+    font-style: italic;
 }
 
 body.light-mode main h2 {
@@ -173,10 +180,12 @@ body.light-mode form {
 }
 
 label {
+    font-family: 'Nunito', sans-serif;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     color: #c5cae9;
+    font-size: 1rem;
 }
 
 body.light-mode label {
@@ -184,6 +193,7 @@ body.light-mode label {
 }
 
 input[type="datetime-local"] {
+    font-family: 'Quicksand', sans-serif;
     width: 100%;
     padding: 0.75rem;
     background: rgba(30, 35, 48, 0.6);
@@ -193,6 +203,7 @@ input[type="datetime-local"] {
     font-size: 1rem;
     color: #e8e9f0;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 body.light-mode input[type="datetime-local"] {
@@ -224,17 +235,20 @@ body.light-mode input[type="datetime-local"]::-webkit-calendar-picker-indicator 
 }
 
 form button[type="submit"] {
+    font-family: 'Nunito', sans-serif;
     width: 100%;
     padding: 0.875rem;
     background: linear-gradient(135deg, #7986cb 0%, #5c6bc0 100%);
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(121, 134, 203, 0.3);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 form button[type="submit"]:hover {
@@ -299,31 +313,41 @@ body.light-mode #feed-records {
 }
 
 #sleep-records h3 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: #a8b5ff;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
-    padding-left: 0.5rem;
-    border-left: 4px solid #a8b5ff;
+    padding-left: 0.75rem;
+    border-left: 5px solid #a8b5ff;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(168, 181, 255, 0.4);
+    text-underline-offset: 4px;
 }
 
 body.light-mode #sleep-records h3 {
     color: #5c6bc0;
     border-left-color: #5c6bc0;
+    text-decoration-color: rgba(92, 107, 192, 0.4);
 }
 
 #feed-records h3 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: #e8b4f5;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
-    padding-left: 0.5rem;
-    border-left: 4px solid #e8b4f5;
+    padding-left: 0.75rem;
+    border-left: 5px solid #e8b4f5;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(232, 180, 245, 0.4);
+    text-underline-offset: 4px;
 }
 
 body.light-mode #feed-records h3 {
     color: #ba68c8;
     border-left-color: #ba68c8;
+    text-decoration-color: rgba(186, 104, 200, 0.4);
 }
 
 #sleep-records ul,
@@ -334,12 +358,15 @@ body.light-mode #feed-records h3 {
 
 #sleep-records li,
 #feed-records li {
+    font-family: 'Quicksand', sans-serif;
     padding: 1rem;
     background: rgba(30, 35, 48, 0.5);
     margin-bottom: 0.75rem;
     border-radius: 8px;
     border-left: 4px solid #7986cb;
     transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 body.light-mode #sleep-records li,
@@ -373,15 +400,17 @@ body.light-mode #feed-records li {
 
 #sleep-total,
 #feed-total {
+    font-family: 'Nunito', sans-serif;
     margin-top: 1.5rem;
     padding: 1rem;
     background: rgba(121, 134, 203, 0.15);
     border: 1px solid rgba(121, 134, 203, 0.3);
     border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
     color: #a8b5ff;
     text-align: center;
+    font-style: italic;
 }
 
 body.light-mode #sleep-total {
@@ -422,24 +451,28 @@ body.light-mode footer {
 }
 
 footer p {
+    font-family: 'Quicksand', sans-serif;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 1rem;
+        padding: 1rem 1rem 3rem 1rem;
+        align-items: center;
     }
 
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         order: 2;
+        padding-top: 0.25rem;
     }
 
     #logo {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
         order: 1;
         margin-bottom: 0.5rem;
     }
@@ -449,15 +482,14 @@ footer p {
         top: 1rem;
         right: 1rem;
         order: 3;
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
     }
 
     nav {
-        position: static;
-        transform: none;
-        order: 4;
+        bottom: 0.5rem;
         gap: 0.5rem;
         flex-wrap: wrap;
-        margin-top: 0.5rem;
     }
 
     nav a {
@@ -467,6 +499,10 @@ footer p {
 
     main {
         margin: 1rem auto;
+    }
+
+    main h2 {
+        font-size: 1.5rem;
     }
 
     form {
