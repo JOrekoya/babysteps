@@ -10,6 +10,10 @@ feedForm.addEventListener("submit", logFeeding);
 let totalSleepHours = 0;
 let totalFeedHours = 0;
 
+// Set light mode on page load
+document.body.classList.add('light-mode');
+toggleColorButton.textContent = '☀️ Light';
+
 function toggleColor() {
     document.body.classList.toggle('light-mode');
     
