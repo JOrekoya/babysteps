@@ -11,12 +11,12 @@ let totalSleepHours = 0;
 let totalFeedHours = 0;
 
 function toggleColor() {
-    if (document.body.style.backgroundColor == 'lightblue') {
-        document.body.style.backgroundColor = 'lightpink';
-    } else if (document.body.style.backgroundColor == 'lightpink') {
-        document.body.style.backgroundColor = '';
-    } else if (document.body.style.backgroundColor == '') {
-        document.body.style.backgroundColor = 'lightblue';
+    document.body.classList.toggle('light-mode');
+    
+    if (document.body.classList.contains('light-mode')) {
+        toggleColorButton.textContent = '☀️ Light';
+    } else {
+        toggleColorButton.textContent = '🌙 Dark';
     }
 }
 
