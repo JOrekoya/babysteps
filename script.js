@@ -1,3 +1,5 @@
+
+
 let toggleColorButton = document.querySelector("#toggle-color");
 toggleColorButton.addEventListener("click", toggleColor);
 
