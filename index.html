@@ -26,39 +26,149 @@
     <main>
         <section id="sleep-section">
             <h2>Track Sleep Time</h2>
-            <form id="sleep-form">
-                <label for="sleep-start">Sleep Start Time:</label>
-                <input type="datetime-local" id="sleep-start" name="sleep-start" required>
-                <br>
-                <label for="sleep-end">Sleep End Time:</label>
-                <input type="datetime-local" id="sleep-end" name="sleep-end" required>
-                <br>
-                <button type="submit">Add Sleep Record</button>
-            </form>
+
+            <!-- Input Method Selector -->
+            <div class="input-method-selector">
+                <button type="button" class="method-btn active" data-method="timer" data-type="sleep">⏱️ Timer</button>
+                <button type="button" class="method-btn" data-method="duration" data-type="sleep">⏳ Duration</button>
+                <button type="button" class="method-btn" data-method="datetime" data-type="sleep">📅 Date/Time</button>
+            </div>
+
+            <!-- Timer Method -->
+            <div class="input-method active" id="sleep-timer-method">
+                <div class="timer-display">
+                    <div class="timer-time" id="sleep-timer-display">00:00:00</div>
+                    <p class="timer-label">Press Start to begin tracking</p>
+                </div>
+                <div class="timer-controls">
+                    <button type="button" class="timer-btn start-btn" id="sleep-start-btn">▶️ Start</button>
+                    <button type="button" class="timer-btn stop-btn" id="sleep-stop-btn" disabled>⏹️ Stop & Save</button>
+                </div>
+            </div>
+
+            <!-- Duration Method -->
+            <div class="input-method" id="sleep-duration-method">
+                <form id="sleep-duration-form">
+                    <div class="duration-inputs">
+                        <div class="duration-group">
+                            <label for="sleep-duration-hours">Hours:</label>
+                            <select id="sleep-duration-hours" name="hours">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="duration-group">
+                            <label for="sleep-duration-minutes">Minutes:</label>
+                            <select id="sleep-duration-minutes" name="minutes">
+                                <option value="0">0</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit">Add Sleep Record</button>
+                </form>
+            </div>
+
+            <!-- DateTime Method -->
+            <div class="input-method" id="sleep-datetime-method">
+                <form id="sleep-form">
+                    <label for="sleep-start">Sleep Start Time:</label>
+                    <input type="datetime-local" id="sleep-start" name="sleep-start" required>
+                    <br>
+                    <label for="sleep-end">Sleep End Time:</label>
+                    <input type="datetime-local" id="sleep-end" name="sleep-end" required>
+                    <br>
+                    <button type="submit">Add Sleep Record</button>
+                </form>
+            </div>
         </section>
 
         <section id="feed-section">
             <h2>Track Feeding Time</h2>
-            <form id="feed-form">
-                <label for="feed-start">Feeding Start Time:</label>
-                <input type="datetime-local" id="feed-start" name="feed-start" required>
-                <br>
-                <label for="feed-end">Feeding End Time:</label>
-                <input type="datetime-local" id="feed-end" name="feed-end" required>
-                <br>
-                <button type="submit">Add Feeding Record</button>
-            </form>
+
+            <!-- Input Method Selector -->
+            <div class="input-method-selector">
+                <button type="button" class="method-btn active" data-method="timer" data-type="feed">⏱️ Timer</button>
+                <button type="button" class="method-btn" data-method="duration" data-type="feed">⏳ Duration</button>
+                <button type="button" class="method-btn" data-method="datetime" data-type="feed">📅 Date/Time</button>
+            </div>
+
+            <!-- Timer Method -->
+            <div class="input-method active" id="feed-timer-method">
+                <div class="timer-display">
+                    <div class="timer-time" id="feed-timer-display">00:00:00</div>
+                    <p class="timer-label">Press Start to begin tracking</p>
+                </div>
+                <div class="timer-controls">
+                    <button type="button" class="timer-btn start-btn" id="feed-start-btn">▶️ Start</button>
+                    <button type="button" class="timer-btn stop-btn" id="feed-stop-btn" disabled>⏹️ Stop & Save</button>
+                </div>
+            </div>
+
+            <!-- Duration Method -->
+            <div class="input-method" id="feed-duration-method">
+                <form id="feed-duration-form">
+                    <div class="duration-inputs">
+                        <div class="duration-group">
+                            <label for="feed-duration-hours">Hours:</label>
+                            <select id="feed-duration-hours" name="hours">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="duration-group">
+                            <label for="feed-duration-minutes">Minutes:</label>
+                            <select id="feed-duration-minutes" name="minutes">
+                                <option value="0">0</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit">Add Feeding Record</button>
+                </form>
+            </div>
+
+            <!-- DateTime Method -->
+            <div class="input-method" id="feed-datetime-method">
+                <form id="feed-form">
+                    <label for="feed-start">Feeding Start Time:</label>
+                    <input type="datetime-local" id="feed-start" name="feed-start" required>
+                    <br>
+                    <label for="feed-end">Feeding End Time:</label>
+                    <input type="datetime-local" id="feed-end" name="feed-end" required>
+                    <br>
+                    <button type="submit">Add Feeding Record</button>
+                </form>
+            </div>
         </section>
 
         <section id="records">
             <h2>Records</h2>
             <div id="sleep-records">
                 <h3>Sleep Records</h3>
-                <ul></ul>
+                <ul id="sleep-records-list"></ul>
             </div>
             <div id="feed-records">
                 <h3>Feeding Records</h3>
-                <ul></ul>
+                <ul id="feed-records-list"></ul>
             </div>
         </section>
 
@@ -66,6 +176,26 @@
     <footer>
         <p>&copy; 2025 BabySteps</p>
     </footer>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Record</h3>
+            <form id="edit-form">
+                <label for="edit-start">Start Time:</label>
+                <input type="datetime-local" id="edit-start" required>
+                <br>
+                <label for="edit-end">End Time:</label>
+                <input type="datetime-local" id="edit-end" required>
+                <br>
+                <div class="modal-buttons">
+                    <button type="submit" class="save-btn">Save Changes</button>
+                    <button type="button" class="cancel-btn" id="cancel-edit">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
