@@ -22,6 +22,7 @@ let feedTimerSeconds = 0;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+    loadFromLocalStorage(); // Load saved data first
     setupMethodSwitchers();
     setupTimers();
     setupForms();
@@ -35,6 +36,53 @@ function toggleColor() {
         toggleColorButton.textContent = '☀️ Light';
     } else {
         toggleColorButton.textContent = '🌙 Dark';
+    }
+}
+
+// LOCAL STORAGE FUNCTIONS
+function saveToLocalStorage() {
+    // Convert records to JSON and save to localStorage
+    localStorage.setItem('sleepRecords', JSON.stringify(sleepRecords));
+    localStorage.setItem('feedRecords', JSON.stringify(feedRecords));
+}
+
+function loadFromLocalStorage() {
+    // Load saved records from localStorage
+    const savedSleep = localStorage.getItem('sleepRecords');
+    const savedFeed = localStorage.getItem('feedRecords');
+    
+    if (savedSleep) {
+        // Parse JSON and convert date strings back to Date objects
+        sleepRecords = JSON.parse(savedSleep).map(record => ({
+            ...record,
+            startTime: new Date(record.startTime),
+            endTime: new Date(record.endTime)
+        }));
+    }
+    
+    if (savedFeed) {
+        // Parse JSON and convert date strings back to Date objects
+        feedRecords = JSON.parse(savedFeed).map(record => ({
+            ...record,
+            startTime: new Date(record.startTime),
+            endTime: new Date(record.endTime)
+        }));
+    }
+    
+    // Render the loaded records
+    renderSleepRecords();
+    renderFeedRecords();
+}
+
+function clearAllData() {
+    if (confirm('Are you sure you want to delete ALL records? This cannot be undone!')) {
+        localStorage.removeItem('sleepRecords');
+        localStorage.removeItem('feedRecords');
+        sleepRecords = [];
+        feedRecords = [];
+        renderSleepRecords();
+        renderFeedRecords();
+        alert('All data has been cleared!');
     }
 }
 
@@ -210,6 +258,9 @@ function addRecord(type, startTime, endTime, hours) {
         feedRecords.unshift(record);
         renderFeedRecords();
     }
+    
+    // Save to localStorage after adding
+    saveToLocalStorage();
 }
 
 function renderSleepRecords() {
@@ -299,6 +350,9 @@ function deleteRecord(id, type) {
             feedRecords = feedRecords.filter(r => r.id != id);
             renderFeedRecords();
         }
+        
+        // Save to localStorage after deleting
+        saveToLocalStorage();
     }
 }
 
@@ -347,6 +401,9 @@ function setupEditModal() {
             } else {
                 renderFeedRecords();
             }
+            
+            // Save to localStorage after editing
+            saveToLocalStorage();
         }
         
         document.getElementById('edit-modal').classList.remove('active');
